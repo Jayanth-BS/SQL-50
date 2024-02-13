@@ -35,3 +35,14 @@ WHERE area >= 3000000 OR population >= 25000000
 SELECT DISTINCT author_id AS id FROM Views
 WHERE author_id = viewer_id
 ORDER BY author_id 
+
+--Question 5
+--1683. Invalid Tweets
+--Link:
+--https://leetcode.com/problems/invalid-tweets/description/?envType=study-plan-v2&envId=top-sql-50
+  
+--Solution:
+SELECT tweet_id FROM Tweets 
+WHERE char_length(content)> 15
+
+
