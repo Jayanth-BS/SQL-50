@@ -41,6 +41,6 @@
 -- +---------+-------------------+
 -- Solution:
 
-SELECT s.user_id , ROUND(IDNULL(AVG(action='confirmed'),0),2) AS confirmation_rate
+SELECT s.user_id , ROUND(IFNULL(AVG(action='confirmed'),0),2) AS confirmation_rate
 FROM Signups as s  LEFT JOIN Confirmations AS c ON c.user_id=s.user_id
 GROUP BY s.user_id
